@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Disclosures | Leges Wealth Management</title>
+  <meta name="description" content="Website disclosures, important disclaimers, terms of use, risk disclosures, privacy, email, and social media disclosures for Leges Wealth Management LLC." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#010e07; --secondary:#1a3f30; --accent:#d3ae62; --neutral:#f7f2e9;
+      --bg:var(--primary); --ink:var(--neutral); --muted:#d9d3c8; --line:var(--secondary);
+      --radius:18px; --shadow:0 14px 40px rgba(0,0,0,.45); --maxw:1100px;
+      --hero-logo-url:url('logo.png');
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:'Cormorant Garamond',serif;color:var(--ink);
+      background:var(--bg);
+      line-height:1.6; letter-spacing:.1px; overflow-x: hidden; padding-top: 60px;}
+    a{color:var(--accent);text-decoration:none} a:hover{opacity:0.9}
+    img{max-width:100%;display:block}
+
+    h1,h2,h3{color:var(--accent);margin:0 0 .5rem;line-height:1.15}
+    h1{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem}
+    h2{font-size:1.5rem;margin-top:1.5rem;margin-bottom:0.5rem}
+    h3{font-size:1.15rem;margin-top:1rem;margin-bottom:0.5rem;color:var(--ink)}
+
+    .container{width:min(100% - 2rem,var(--maxw));margin-inline:auto}
+    .muted{color:var(--muted)}
+
+    #cursor-canvas {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 9999;
+    }
+
+    .globe-container {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 600px; height: 600px; z-index: 0; pointer-events: none;
+    }
+    .globe { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; animation: rotateGlobe 30s linear infinite; }
+    .globe::before {
+      content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 3px solid var(--accent);
+      box-shadow: inset 0 0 80px rgba(211,174,98,0.5), 0 0 60px rgba(211,174,98,0.4), 0 0 120px rgba(211,174,98,0.2);
+    }
+    .globe-line { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; border: 2px solid var(--accent); border-radius: 50%; transform-origin: center center; box-shadow: 0 0 15px rgba(211,174,98,0.3); }
+    .globe-line.lat1 { transform: translate(-50%, -50%) rotateX(0deg) scale(1); }
+    .globe-line.lat2 { transform: translate(-50%, -50%) rotateX(0deg) scale(0.866); }
+    .globe-line.lat3 { transform: translate(-50%, -50%) rotateX(0deg) scale(0.707); }
+    .globe-line.lat4 { transform: translate(-50%, -50%) rotateX(0deg) scale(0.5); }
+    .globe-line.lat5 { transform: translate(-50%, -50%) rotateX(0deg) scale(0.259); }
+    .globe-line.long1 { transform: translate(-50%, -50%) rotateY(0deg); }
+    .globe-line.long2 { transform: translate(-50%, -50%) rotateY(30deg); }
+    .globe-line.long3 { transform: translate(-50%, -50%) rotateY(60deg); }
+    .globe-line.long4 { transform: translate(-50%, -50%) rotateY(90deg); }
+    .globe-line.long5 { transform: translate(-50%, -50%) rotateY(120deg); }
+    .globe-line.long6 { transform: translate(-50%, -50%) rotateY(150deg); }
+    @keyframes rotateGlobe { from { transform: rotateY(0deg) rotateX(-15deg); } to { transform: rotateY(360deg) rotateX(-15deg); } }
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 1.15rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font-weight:700;box-shadow:var(--shadow);transition:all 0.3s ease}
+    .btn.secondary{background:linear-gradient(180deg,var(--accent),#c59d54);color:#2b2925}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(0,0,0,.45);background:linear-gradient(180deg,var(--accent),#c59d54);color:#2b2925;border-color:var(--accent)}
+    .btn.secondary:hover{background:linear-gradient(180deg,#e5c478,var(--accent));box-shadow:0 0 20px rgba(211,174,98,0.4),0 18px 36px rgba(0,0,0,.45)}
+
+    header{position:fixed;top:0;left:0;right:0;backdrop-filter:blur(8px);background:var(--secondary);font-size: 1.1rem;z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+    .brand{ display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.4px; color:var(--ink); flex-shrink: 0; text-decoration:none}
+    .brand img{
+      width:28px;
+      height:28px;
+      border-radius:8px;
+      border:1px solid var(--line);
+      object-fit:cover;
+    }
+    nav[aria-label="Primary"] {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    nav ul{display:flex;gap:1.1rem;list-style:none;padding:0;margin:0}
+    nav a{color:var(--ink);opacity:.85;font-weight:600;padding:.55rem .8rem;border-radius:10px;transition:all 0.3s ease;text-decoration:none}
+    nav a:hover{background:rgba(211,174,98,.2);opacity:1;color:var(--accent)}
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 60;
+      margin-right: 0.5rem;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+      transition: all 0.3s ease;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    main{position:relative;z-index:1;padding:1.5rem 0 3rem}
+
+    .section{
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+      border:1px solid rgba(26,63,48,.4);
+      border-radius:var(--radius);
+      padding:1.25rem;
+      margin-top:1rem;
+      box-shadow:0 16px 48px rgba(0,0,0,.5);
+    }
+    .section p{margin:0 0 1rem}
+    .section p:last-child{margin-bottom:0}
+
+    ul{padding-left:1.25rem;color:var(--muted)}
+
+    footer{padding:1rem 0;color:var(--muted);position:relative;z-index:1}
+    .footer-content{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:0.95rem}
+    .footer-links{display:flex;gap:.9rem;flex-wrap:wrap}
+    .footer-links a{color:var(--muted);text-decoration:none;transition:all 0.3s ease}
+    .footer-links a:hover{color:var(--accent)}
+
+    [hidden]{display:none!important}
+    .contact-bubble{position:fixed;right:1rem;bottom:1rem;z-index:70;display:grid;gap:.6rem}
+    .bubble-toggle{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border-radius:999px;background:linear-gradient(180deg,var(--accent),#c59d54);color:#2b2925;border:1px solid var(--line);font-weight:700;box-shadow:var(--shadow);cursor:pointer;transition:all 0.3s ease;animation: bubbleEntrance 0.8s ease-out forwards, goldPulse 2s ease-in-out infinite 0.8s;transform-origin: center center;}
+    @keyframes goldPulse { 0%, 100% { box-shadow: 0 0 10px rgba(211,174,98,0.4), 0 0 20px rgba(211,174,98,0.2), var(--shadow); } 50% { box-shadow: 0 0 25px rgba(211,174,98,0.8), 0 0 50px rgba(211,174,98,0.4), 0 0 75px rgba(211,174,98,0.2), var(--shadow); } }
+    .bubble-toggle:hover{box-shadow:0 0 30px rgba(211,174,98,0.6),var(--shadow);background:linear-gradient(180deg,#e5c478,var(--accent));animation:goldPulse 2s ease-in-out infinite}
+    .bubble-toggle .dot{width:8px;height:8px;border-radius:999px;background:var(--secondary);box-shadow:0 0 0 4px rgba(26,63,48,.25)}
+    .bubble-panel{width:min(92vw,420px);max-height:min(70vh,640px);overflow:auto;padding:1.5rem;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(6px)}
+    .bubble-panel header{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:1rem}
+    .bubble-close{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:.35rem .55rem;cursor:pointer;transition:all 0.3s ease}
+    .bubble-close:hover{background:rgba(211,174,98,.2);border-color:var(--accent)}
+    .bubble-panel form{display:grid;gap:1.2rem}
+    .bubble-panel input,.bubble-panel textarea{background:#2f2c26;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:1rem 1.2rem;font-family:'Cormorant Garamond',serif}
+    .bubble-panel textarea{min-height:120px}
+
+    /* Responsive */
+    @media(max-width:960px){
+      .globe-container{width:400px;height:400px}
+      
+      .hamburger { display: flex; }
+      
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--secondary);
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        z-index: 100;
+        min-width: 220px;
+        border-radius: 0 0 10px 10px;
+      }
+      
+      nav ul.open { display: flex; }
+      nav ul li { width: 100%; }
+      nav ul li a {
+        display: block;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(211,174,98,0.2);
+        color: var(--ink);
+        opacity: 1;
+      }
+      nav ul li:last-child a { border-bottom: none; }
+      nav ul li a:hover { background: rgba(211,174,98,0.2); }
+      .brand span { display: none; }
+      .nav .btn.secondary { padding: 0.7rem 1rem; font-size: 0.95rem; }
+    }
+    @media(max-width:600px){
+      .globe-container{width:300px;height:300px}
+      .footer-content { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="cursor-canvas"></canvas>
+
+  <div class="globe-container">
+    <div class="globe">
+      <div class="globe-line lat1"></div>
+      <div class="globe-line lat2"></div>
+      <div class="globe-line lat3"></div>
+      <div class="globe-line lat4"></div>
+      <div class="globe-line lat5"></div>
+      <div class="globe-line long1"></div>
+      <div class="globe-line long2"></div>
+      <div class="globe-line long3"></div>
+      <div class="globe-line long4"></div>
+      <div class="globe-line long5"></div>
+      <div class="globe-line long6"></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <nav aria-label="Primary">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="nav-menu">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="services.html">Services &amp; Strategies</a></li>
+          <li><a href="who-we-serve.html">Who We Serve</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="logo2.png" alt="Leges Wealth Management logo" class="nav-logo">
+        <span>Leges Wealth Management</span>
+      </a>
+      <a class="btn secondary" href="login.html">Client Login</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Disclosures</h1>
+
+    <h2 id="important-disclosures">Important Disclosures</h2>
+    <div class="section">
+      <p>
+        Leges Wealth Management LLC ("Leges Wealth") is a Registered Investment Advisor with the U.S. Securities and Exchange Commission ("SEC"). Registration as an investment advisor does not imply any level of skill or training. Past performance may not be indicative of future results. Different types of investments involve varying degrees of risk. Therefore, it should not be assumed that future performance of any specific investment or investment strategy will be profitable.
+        Asset allocation may be used in an effort to manage risk and enhance returns. It does not, however, guarantee a profit or protect against loss. Performance of the asset allocation strategies depends on the underlying investments.
+        This website is intended to provide general information about Leges Wealth and its services. It is not intended to offer or deliver investment advice in any way. Information regarding investment services are provided solely to gain an understanding of our investment philosophy, our strategies and to be able to contact us for further information. 
+        Market data, articles and other content on this website are based on generally available information and are believed to be reliable. Leges Wealth does not guarantee the accuracy of the information contained in this website. The information is of a general nature and should not be construed as investment advice. 
+        Please remember that it remains your responsibility to advise Leges Wealth, in writing, if there are any changes in your personal/financial situation or investment objectives for the purpose of reviewing/evaluating/revising our previous recommendations and/or services, if you would like to impose, add, or to modify any reasonable restrictions to our investment advisory services. 
+        Leges Wealth will provide all prospective clients with a copy of our current Form ADV, Part 2A ("Disclosure Brochure"), Form ADV Part 2B, which is the Brochure Supplement for each advisory person supporting a particular client. You may obtain a copy of these disclosures on the SEC website at http://adviserinfo.sec.gov or you may contact us to request a free copy via .pdf or hardcopy.
+      </p>
+    </div>
+
+    <h2 id="privacy-policy">Privacy Policy Summary</h2>
+    <div class="section">
+      <p>
+        Leges Wealth is committed to safeguarding the use of personal information of our Clients (also referred to as "you" and "your") that we obtain as your Investment Advisor, as described in our Privacy Policy.
+        Leges Wealth does not collect personal non-public information through this website; however, the Advisor may collect information from you on application forms, agreements, profile or investment policy statements, and other documents received or processed in relation to services we provide. We also may collect information from other sources.
+        We do not respond to "do not track" requests because we do not track you over time or across third party websites to provide targeted advertising. We may track you across our website to help us improve our content.
+        We may use "cookies" and similar online technologies to keep, and sometimes track, information about you regarding your usage of our website. Cookies are small data files that are sent to your browser or related software from a Web server and stored on your device. Cookies help us to collect information about your usage of our website, including date and time of visits, pages viewed, amount of time spent on our sites, or general information about the device used to access the site, such as the browser used. You can refuse to store or delete cookies by configuring your web browser settings. Most browsers and mobile devices have their own settings to manage cookies. If you refuse a cookie when on our website, or if you delete cookies, you may experience some inconvenience in your use of our website, such as having to re-configure preferences.
+        When you are on this website you may have the opportunity to click-through to other websites, including websites operated by unaffiliated third parties. These sites may collect nonpublic personal Information about you. We do not control sites operated by these entities and are not responsible for the information practices of these sites. This Privacy Policy does not address the information practices of other websites. The privacy policies of websites operated third parties are located on those sites.
+      </p>
+      <p>
+        <a href="PrivacyPolicy.html">Privacy Policy</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>© <span id="year"></span> Leges Wealth Management LLC. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="faq.html">FAQ</a>
+        <a href="PrivacyPolicy.html">Privacy Policy</a>
+        <a href="disclosures.html">Disclosures</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="contact-bubble" id="contact-bubble">
+    <button class="bubble-toggle" id="bubble-toggle" aria-expanded="false" aria-controls="contact-panel">
+      <span class="dot" aria-hidden="true"></span>
+      Contact Us
+    </button>
+    <div class="bubble-panel" id="contact-panel" hidden>
+      <header>
+        <strong>Send a message</strong>
+        <button class="bubble-close" id="bubble-close" aria-label="Close contact form">×</button>
+      </header>
+      <form id="bubble-form" action="#" method="post">
+        <div><label class="muted" for="bname">Name</label><input id="bname" name="name" placeholder="Jane Doe" required /></div>
+        <div><label class="muted" for="bemail">Email</label><input id="bemail" name="email" type="email" placeholder="jane@example.com" required /></div>
+        <div><label class="muted" for="bmsg">Message</label><textarea id="bmsg" name="message" placeholder="Tell us how we can help"></textarea></div>
+        <div><button class="btn" type="submit">Send Message</button></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    (function(){
+      const canvas = document.getElementById('cursor-canvas');
+      const ctx = canvas.getContext('2d');
+      function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+      const trail = [];
+      const maxTrailLength = 20;
+      let mouseX = 0, mouseY = 0;
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX; mouseY = e.clientY;
+        trail.push({ x: mouseX, y: mouseY, age: 0 });
+        if (trail.length > maxTrailLength) trail.shift();
+      });
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if (trail.length < 2) { requestAnimationFrame(draw); return; }
+        ctx.beginPath();
+        ctx.moveTo(trail[0].x, trail[0].y);
+        for (let i = 1; i < trail.length; i++) {
+          const prev = trail[i - 1], curr = trail[i];
+          ctx.quadraticCurveTo(prev.x, prev.y, (prev.x + curr.x) / 2, (prev.y + curr.y) / 2);
+        }
+        if (trail.length > 0) ctx.lineTo(trail[trail.length - 1].x, trail[trail.length - 1].y);
+        const gradient = ctx.createLinearGradient(trail[0].x, trail[0].y, trail[trail.length - 1].x, trail[trail.length - 1].y);
+        gradient.addColorStop(0, 'rgba(211, 174, 98, 0)');
+        gradient.addColorStop(0.5, 'rgba(211, 174, 98, 0.4)');
+        gradient.addColorStop(1, 'rgba(211, 174, 98, 0.8)');
+        ctx.strokeStyle = gradient; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.stroke();
+        trail.forEach(p => p.age++);
+        while (trail.length > 0 && trail[0].age > 8) trail.shift();
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // Hamburger menu toggle
+    (function(){
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+      if(!hamburger || !navMenu) return;
+      hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('open');
+      });
+      navMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('open');
+        });
+      });
+      document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('open');
+        }
+      });
+    })();
+
+    (function(){
+      const toggle = document.getElementById('bubble-toggle');
+      const panel = document.getElementById('contact-panel');
+      const close = document.getElementById('bubble-close');
+      const bubble = document.getElementById('contact-bubble');
+      const form = document.getElementById('bubble-form');
+      if(!toggle || !panel || !close || !bubble) return;
+      function openPanel(){ panel.hidden = false; toggle.setAttribute('aria-expanded','true'); setTimeout(() => document.addEventListener('click', outsideClick), 0); }
+      function closePanel(){ panel.hidden = true; toggle.setAttribute('aria-expanded','false'); document.removeEventListener('click', outsideClick); }
+      function outsideClick(e){ if(!bubble.contains(e.target)) closePanel(); }
+      toggle.addEventListener('click', (e)=>{ e.preventDefault(); e.stopPropagation(); panel.hidden ? openPanel() : closePanel(); });
+      close.addEventListener('click', (e)=>{ e.preventDefault(); closePanel(); });
+      window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closePanel(); });
+      if(form){ form.addEventListener('submit', (e)=>{ e.preventDefault(); alert('Thanks for reaching out! We will be in touch soon.'); closePanel(); }); }
+    })();
+  </script>
+</body>
+</html>
