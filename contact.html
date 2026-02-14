@@ -1,24 +1,26 @@
 ---
-permalink: /services/
+permalink: /contact/
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services & Strategies | Leges Wealth Management</title>
-  <meta name="description" content="Our financial planning services and investment strategies at Leges Wealth Management." />
+  <title>Contact Us | Leges Wealth Management</title>
+  <meta name="description" content="Contact Leges Wealth Management for a strategy call or to learn more about our services." />
   <link rel="icon" type="image/png" href="/assets/images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/scripts.js" defer></script>
-</head> 
+</head>
 <body>
+  <!-- Golden Line Cursor Trail -->
   <canvas id="cursor-canvas"></canvas>
+  <div class="cursor-dot" id="cursor-dot"></div>
 
+  <!-- Rotating Globe Background -->
   <div class="globe-container">
     <div class="globe">
       <div class="globe-line lat1"></div>
@@ -34,6 +36,8 @@ permalink: /services/
       <div class="globe-line long6"></div>
     </div>
   </div>
+
+  <!-- Header -->
   <header>
     <div class="container nav">
       <nav aria-label="Primary">
@@ -58,64 +62,62 @@ permalink: /services/
       <a class="btn secondary" href="/login">Client Login</a>
     </div>
   </header>
-  <section class="hero">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
     <div class="container inner">
-      <div class="hero-heading">
-        <h1>Services &amp; <span style="color:var(--accent);">Strategies</span></h1>
+    <div class="hero-heading">
+        <div class="eyebrow">Leges Wealth Management</div>
+        <h1>Contact Us</h1>
+        <p class="lead">Ready to start your journey? Reach out today.</p>
       </div>
-      <p class="lead">Thoughtful, research-driven planning aligned with your goals, values, and timeline.</p>
     </div>
   </section>
 
-  <section>
+  <section class="container container-small contact-form-section">
+      <form id="contact-form">
+        <div>
+          <label for="name">Name</label>
+          <input placeholder="First and Last Name" type="text" id="name" name="name" required>
+        </div>
+        <div class="contact-form-flex-group">
+            <div>
+                <label for="email">Email</label>
+                <input placeholder="email@example.com" type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="phone">Phone</label>
+                <input placeholder="(123) 456-7890" type="tel" id="phone" name="phone" required>
+            </div>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea placeholder="Additional information or questions" id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+  </section>
+
+  <!-- Why Choose -->
+  <section id="contact">
     <div class="container">
       <div class="section-head">
-        <h2>Our Services</h2>
-        <p class="muted">A coordinated approach across planning, investing, and protection.</p>
+        <h2>Why Choose Us</h2>
       </div>
       <div class="card-grid">
-        <div class="card">
-          <span class="pill">Plan</span>
-          <h3>Financial Planning</h3>
-          <p class="muted">Cash flow, taxes, goals, and major life events—integrated into a living plan.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Invest</span>
-          <h3>Investment Management</h3>
-          <p class="muted">Tailored portfolios built for your risk tolerance, timeline, and liquidity needs.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Protect</span>
-          <h3>Insurance & Risk Review</h3>
-          <p class="muted">Reviewing insurance coverage and risk exposures to help align protection strategies with broader financial goals.</p>
-        </div>
+        <article class="resource">
+          <span class="pill">Expertise</span>
+          <h3>Experienced Investment Approach</h3>
+          <p class="muted">A thoughtful investment process grounded in research, clarity, and long-term discipline.</p>
+        </article>
+        <article class="resource">
+          <span class="pill">Alignment</span>
+          <h3>Actively Managed Portfolios</h3>
+          <p class="muted">We operate as fiduciaries, aligning our advice with your best interests.</p>
+        </article>
       </div>
     </div>
   </section>
-
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <h2>Investment Strategies</h2>
-        <p class="muted">Reviewing insurance coverage and risk exposures to help align protection strategies with broader financial goals.</p>
-      </div>
-      <div class="three-col">
-        <div class="plan">
-          <h3>Risk Alignment</h3>
-          <div class="meta">Portfolios are built to match client risk tolerance, liquidity needs, and time horizon</div>
-        </div>
-        <div class="plan">
-          <h3>Asset allocation & Diversification</h3>
-          <div class="meta">Exposure across equities, fixed income, and real assets with diversification across geographies and sectors based on current market environments</div>
-        </div>
-        <div class="plan">
-          <h3>Active oversight & Tactical Rebalancing</h3>
-          <div class="meta">Ongoing monitoring and tactically managed rebalancing to respond to market conditions, valuations, and portfolio drift</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <footer class="contact">
     <div class="container">
       <div class="section-head">
@@ -138,5 +140,6 @@ permalink: /services/
       </div>
     </div>
   </footer>
+
 </body>
 </html>
