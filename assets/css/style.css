@@ -506,3 +506,65 @@ footer{ margin-top:1.5rem; padding-block:1rem; color:var(--muted); font-size:1re
     align-items: center;
     gap: 1rem;
 }
+
+.container.client-login {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+
+    @media (min-width: 1000px) {
+      grid-template-columns: 1fr 50px 1fr;
+    }
+
+    & div[class^="client-login-"] {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    & .btn {
+      width: 100%;
+   
+      display: flex;
+      @media (min-width: 1000px) {
+        width: 100%;
+        min-width: 300px;
+        
+      }
+    }
+
+    .client-login-left {
+        
+        padding: 1rem;
+        color: var(--ink);
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .client-login-right {
+      
+    
+        padding: 1rem;
+        color: var(--ink);
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .divider {
+        background: rgba(211,174,98,.2);
+        height: 1px;
+        width: 100%;
+
+        @media (min-width: 1000px) {
+            flex-direction: row;
+            height: 350px;
+            width: 1px;
+        }
+    }
+}
